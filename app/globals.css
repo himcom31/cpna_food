@@ -28,12 +28,12 @@ body {
 
 @media (max-width: 767px) {
   .main-content {
-    padding-top: 98px; /* ticker(40px) + bar(58px) */
+    padding-top: 108px; /* ticker(40px) + bar(auto ~68px) */
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 340px) {
   .main-content {
-    padding-top: 90px; /* ticker(36px) + bar(54px) */
+    padding-top: 88px;
   }
 }

@@ -743,34 +743,41 @@ const styles = `
   }
 
   /* ══════════════ MOBILE RESPONSIVE OVERRIDES ══════════════ */
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
   .cpna-bar-inner {
     padding: 0 12px;
     gap: 8px;
-    height: 58px;        /* 68px → 58px */
+    height: auto;        /* ✅ fixed height hatao */
+    min-height: 58px;    /* ✅ min-height rakho */
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
-  .cpna-nav.scrolled .cpna-bar-inner { height: 52px; }
+  .cpna-nav.scrolled .cpna-bar-inner { 
+    min-height: 52px; 
+    height: auto;
+  }
 
-  .cpna-logo-badge { width: 36px; height: 36px; }   /* 42px → 36px */
+  .cpna-logo-badge { width: 36px; height: 36px; }
   .cpna-logo-badge-bg { border-radius: 10px; }
-  .cpna-logo-name, .cpna-logo-sub { font-size: 15px; }  /* 16.5px → 15px */
-  .cpna-logo-tag { font-size: 12px; }
+  .cpna-logo-name, .cpna-logo-sub { font-size: 14px; }
+  .cpna-logo-tag { 
+    font-size: 11px;
+    display: block !important;  /* ✅ force show */
+    white-space: nowrap;
+  }
 
   .cpna-contact-btn { display: none !important; }
   .cpna-right-group { gap: 6px; }
 
-  .cpna-icon-btn {
-    width: 34px; height: 34px;   /* 38px → 34px */
-  }
-  /* Ring animation mobile pe off — warna extra space */
+  .cpna-icon-btn { width: 34px; height: 34px; }
   .cpna-icon-btn::before { display: none; }
 
   .cpna-mobile-btn {
-    width: 34px; height: 34px;   /* 38px → 34px */
+    width: 34px; height: 34px;
     border-radius: 10px;
   }
 
-  .cpna-ticker { height: 40px; }   /* 46px → 40px */
+  .cpna-ticker { height: 40px; }
   .cpna-ticker-track { gap: 18px; }
   .cpna-ticker-icon { width: 24px; height: 24px; font-size: 12px; border-radius: 6px; }
   .cpna-ticker-title { font-size: 10.5px; }
@@ -778,24 +785,25 @@ const styles = `
   .cpna-ticker-sep { height: 18px; }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 340px) {
   .cpna-bar-inner {
-    height: 54px;
-    padding: 0 10px;
+    height: auto;
+    min-height: 50px;
+    padding: 6px 10px;
     gap: 6px;
   }
-  .cpna-logo-badge { width: 32px; height: 32px; }
-  .cpna-logo-name, .cpna-logo-sub { font-size: 14px; }
-  .cpna-logo-tag { display: none; }
+  .cpna-logo-badge { width: 30px; height: 30px; }
+  .cpna-logo-name, .cpna-logo-sub { font-size: 12px; }
+  .cpna-logo-tag { display: none !important; }
 
-  .cpna-icon-btn { width: 32px; height: 32px; }
-  .cpna-mobile-btn { width: 32px; height: 32px; }
+  .cpna-icon-btn { width: 30px; height: 30px; }
+  .cpna-mobile-btn { width: 30px; height: 30px; }
 
   .cpna-ticker-sub { display: none; }
   .cpna-ticker { height: 36px; }
-  .cpna-ticker-icon { width: 22px; height: 22px; font-size: 11px; }
+  .cpna-ticker-icon { width: 20px; height: 20px; font-size: 10px; }
   .cpna-ticker-title { font-size: 10px; }
-  .cpna-ticker-track { gap: 14px; }
+  .cpna-ticker-track { gap: 12px; }
 }
 `;
 
